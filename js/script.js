@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (email && password) {
                 localStorage.setItem("almaabUser", email);
-                window.location.href = "index.html";
+                window.location.href = "home.html";
             }
         });
     }
