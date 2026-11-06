@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALMAAB | منتجاتنا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <h1>ALMAAB<span>.</span></h1>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">منتجاتنا</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a href="logout.html">خروج</a>
+    </nav>
+</header>
+
+<section class="products-hero">
+    <p>DISCOVER OUR COLLECTION</p>
+    <h2>منتجات <span>ALMAAB</span></h2>
+    <p>اكتشفي أحدث الأجهزة الإلكترونية واجعلي التكنولوجيا أقرب إليك.</p>
+</section>
+
+<!-- زر السلة -->
+<div class="cart-button-area">
+    <button onclick="toggleCart()" class="cart-button">
+        🛒 سلة المشتريات
+        <span id="cart-count">0</span>
+    </button>
+</div>
+
+<!-- محتويات السلة -->
+<section id="cart-section" class="cart-section" style="display:none;">
+    <h2>🛒 سلة مشترياتك</h2>
+
+    <div id="cart-items"></div>
+
+    <h3>الإجمالي: <span id="cart-total">0</span> جنيه</h3>
+
+    <button onclick="clearCart()" class="clear-cart">
+        إفراغ السلة
+    </button>
+
+    <button onclick="checkout()" class="checkout-button">
+        إتمام الشراء
+    </button>
+</section>
+
+<main class="products-container">
+
+    <h2>📱 الهواتف الذكية</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card" data-name="Samsung Galaxy" data-price="850000">
+            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600" alt="Samsung">
+            <h3>Samsung Galaxy</h3>
+            <p>أداء قوي وتصميم أنيق وشاشة رائعة.</p>
+            <span>هاتف ذكي</span>
+            <h4>850,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+        <div class="product-card" data-name="Apple iPhone" data-price="1200000">
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600" alt="iPhone">
+            <h3>Apple iPhone</h3>
+            <p>تكنولوجيا متطورة وتجربة استخدام مميزة.</p>
+            <span>هاتف ذكي</span>
+            <h4>1,200,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+        <div class="product-card" data-name="Xiaomi" data-price="650000">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" alt="Xiaomi">
+            <h3>Xiaomi</h3>
+            <p>مواصفات ممتازة وأداء يناسب احتياجاتك.</p>
+            <span>هاتف ذكي</span>
+            <h4>650,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+    </div>
+
+    <h2>📲 الأجهزة اللوحية</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card" data-name="iPad" data-price="900000">
+            <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600" alt="iPad">
+            <h3>iPad</h3>
+            <p>مناسب للدراسة والعمل والترفيه.</p>
+            <span>جهاز لوحي</span>
+            <h4>900,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+        <div class="product-card" data-name="Samsung Tablet" data-price="700000">
+            <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600" alt="Tablet">
+            <h3>Samsung Tablet</h3>
+            <p>شاشة واسعة وتجربة استخدام مريحة.</p>
+            <span>جهاز لوحي</span>
+            <h4>700,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+    </div>
+
+    <h2>💻 الحواسيب</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card" data-name="Laptop" data-price="1500000">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600" alt="Laptop">
+            <h3>Laptop</h3>
+            <p>إنجاز أعمالك ودراستك بكفاءة.</p>
+            <span>حاسوب محمول</span>
+            <h4>1,500,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+        <div class="product-card" data-name="Desktop Computer" data-price="1800000">
+            <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600" alt="Computer">
+            <h3>Desktop Computer</h3>
+            <p>قوة وأداء للاستخدامات المختلفة.</p>
+            <span>حاسوب مكتبي</span>
+            <h4>1,800,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+    </div>
+
+    <h2>🎧 الإكسسوارات</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card" data-name="Headphones" data-price="180000">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600" alt="Headphones">
+            <h3>Headphones</h3>
+            <p>استمتعي بصوت واضح وتجربة مميزة.</p>
+            <span>سماعات</span>
+            <h4>180,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+        <div class="product-card" data-name="Accessories" data-price="100000">
+            <img src="https://images.unsplash.com/photo-1609592806596-b43badaf7c7e?w=600" alt="Accessories">
+            <h3>Accessories</h3>
+            <p>إكسسوارات متنوعة لأجهزتك الإلكترونية.</p>
+            <span>إكسسوارات</span>
+            <h4>100,000 جنيه</h4>
+            <button class="add-cart" onclick="addToCart(this)">أضيفي إلى السلة 🛒</button>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    ALMAAB © 2026 - جميع الحقوق محفوظة
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
