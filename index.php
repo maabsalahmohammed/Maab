@@ -1,28 +1,3 @@
-
-<?php
-session_start();
-
-$error = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    // اختبار مبدئي لحين ربط قاعدة البيانات
-    if ($email == "admin@gmail.com" && $password == "123456") {
-
-        $_SESSION["email"] = $email;
-
-        header("Location: index.php");
-        exit();
-
-    } else {
-        $error = "البريد الإلكتروني أو كلمة المرور غير صحيحة";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -31,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>ALMAAB | تسجيل الدخول</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body class="login-body">
 
     <div class="login-container">
@@ -40,26 +14,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>ALMAAB</h1>
         <p class="subtitle">عالم التكنولوجيا بين يديك</p>
 
-        <?php if ($error != ""): ?>
-            <p style="color:red;">
-                <?php echo $error; ?>
-            </p>
-        <?php endif; ?>
-
-        <form method="POST" action="login.php">
-
+        <form id="loginForm">
             <label>البريد الإلكتروني</label>
-            <input type="email" name="email"
+            <input type="email" id="email"
                    placeholder="أدخل بريدك الإلكتروني" required>
 
             <label>كلمة المرور</label>
-            <input type="password" name="password"
+            <input type="password" id="password"
                    placeholder="أدخل كلمة المرور" required>
 
             <button type="submit" class="login-btn">
                 تسجيل الدخول
             </button>
-
         </form>
 
         <p class="footer-text">
@@ -67,5 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </p>
     </div>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
